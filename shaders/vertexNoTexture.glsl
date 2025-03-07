@@ -1,0 +1,38 @@
+#version 330 core
+
+
+
+//////////////////////////////////////////////////////////////
+//	layout (location) specifies where our vec3 is 
+//    location 0 means that it is in the 0th index
+//////////////////////////////////////////////////////////
+
+layout (location = 0) in vec3 aPos;
+//layout (location = 1) in vec3 aCol;
+//layout (location = 2) in vec2 tex;
+
+uniform mat4 model;
+uniform mat4 view;
+uniform mat4 proj;
+
+
+
+
+void main()
+{
+
+  //////////////////////////////////////////////////////////////
+  //  gl_position specifies the position of the vertex
+  //////////////////////////////////////////////////////////
+
+  gl_Position = proj * view * model * vec4(aPos, 1.0);
+
+  //////////////////////////////////////////////////////////////
+  // assign the output to the color we had defined before 
+  //  in order to pass over to frag shader
+  //////////////////////////////////////////////////////////
+
+
+
+}
+    
